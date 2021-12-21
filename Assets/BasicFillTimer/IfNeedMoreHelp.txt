@@ -1,0 +1,10 @@
+How to use this timer:
+1. Have timer somewhere else that you need to display. 
+2. Add prefab "BasicFillTimer" to scene.
+2,5. Set the settings of the prefab, depending on what you want it to do.  
+3. Add a reference to "BasicFillTimerController" contained in the prefab you just added. 
+4. Send your percentage of completion to the timer. Numbers between 0.0 to 1.0. To get your timers percentage of completion, divide your current timer value by the total timer value. 
+
+You'll make it work i believe. 
+
+Made by: https://github.com/joelttyjoel

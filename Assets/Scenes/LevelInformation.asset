@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49492cdfd76c3944ab0818cac5561eb, type: 3}
+  m_Name: LevelInformation
+  m_EditorClassIdentifier: 
+  piecesToCreate:
+  - pieceLevel0to3: 0
+    sprite: {fileID: 21300000, guid: 9e3a0bb0d8e7c52469f6196323cce36c, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a2c03318bde21044fa5e5effbed0838b, type: 3}
+    - {fileID: 6636641730930025575, guid: a2c03318bde21044fa5e5effbed0838b, type: 3}
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+  - pieceLevel0to3: 0
+    sprite: {fileID: 21300000, guid: 79f97cbbea346aa478bd8dc2bcbfd61b, type: 3}
+    ingredients:
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+  - pieceLevel0to3: 0
+    sprite: {fileID: 21300000, guid: a905378542d640f4f971cd4988c20c3e, type: 3}
+    ingredients:
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+  - pieceLevel0to3: 0
+    sprite: {fileID: 21300000, guid: e64a2e5324ee75348adad0f13042d578, type: 3}
+    ingredients:
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+  - pieceLevel0to3: 0
+    sprite: {fileID: 21300000, guid: 55129e4f6dada154fb3a707fae703db5, type: 3}
+    ingredients:
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+  - pieceLevel0to3: 1
+    sprite: {fileID: 21300000, guid: 3925b67a9c06f7344af33b214e20c72f, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 6636641730930025575, guid: a2c03318bde21044fa5e5effbed0838b, type: 3}
+    - {fileID: 6636641730930025575, guid: a2c03318bde21044fa5e5effbed0838b, type: 3}
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+  - pieceLevel0to3: 1
+    sprite: {fileID: 21300000, guid: 3985391849aa33646a6cb4cebbb877f8, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+  - pieceLevel0to3: 1
+    sprite: {fileID: 21300000, guid: f09f945830dba9d498c1d5959e0e9f47, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+  - pieceLevel0to3: 1
+    sprite: {fileID: 21300000, guid: f6f9f3aac49797041b72eecb34eb605e, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+  - pieceLevel0to3: 1
+    sprite: {fileID: 21300000, guid: bcb9c5d71b435e34fa328432e80afd36, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+    - {fileID: 6636641730930025575, guid: a2c03318bde21044fa5e5effbed0838b, type: 3}
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+  - pieceLevel0to3: 2
+    sprite: {fileID: 21300000, guid: b5ae301efb2b6bd49b5e700bf6b2b783, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+  - pieceLevel0to3: 3
+    sprite: {fileID: 21300000, guid: 783976f2ac4837e4a9b01e6403037c6a, type: 3}
+    ingredients:
+    - {fileID: 6636641730930025575, guid: a8e754bdc2875664b8274e4fa13290cb, type: 3}
+    - {fileID: 5921735581492129532, guid: af65a089272340b4e87d5ccee781f546, type: 3}
+    - {fileID: 1969427961762735683, guid: 43ffb5433a3c87945a6de2ad7595bb2e, type: 3}
+    - {fileID: 8197280730955944088, guid: a70fe248b30844a42a63915f49a44ba9, type: 3}
+    - {fileID: 2320142841497662797, guid: b99f495ba2bd8d444a930218e0ee7409, type: 3}
+    - {fileID: 6636641730930025575, guid: a2c03318bde21044fa5e5effbed0838b, type: 3}
+  scoreMultiplierxLevel: 200
+  GameSceneName: SceneTemplate
+  levels:
+  - score: 9000
+    customers:
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 010000000200000001000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 0100000004000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 010000000300000000000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 01000000020000000400000003000000
+    - spawnTime: 15
+      itemsInOrderIndexInBoardManager: 01000000020000000300000003000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 02000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 01000000000000000400000000000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0100000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 01000000020000000000000003000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 01000000020000000100000004000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0100000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 010000000200000000000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 010000000200000003000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 01000000020000000000000003000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 05000000
+    boardPercentages: 140000001000000010000000100000001000000010000000
+  - score: 15800
+    customers:
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 08000000020000000800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 080000000200000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 08000000020000000800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0800000008000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 08000000020000000800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 020000000200000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 08000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 02000000020000000800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 02000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 020000000200000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 020000000200000008000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 02000000080000000800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 080000000800000008000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 020000000200000008000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 02000000020000000800000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0200000002000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 02000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 020000000800000008000000
+    boardPercentages: 1900000000000000000000004b0000000000000000000000
+  - score: 7400
+    customers:
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 08000000050000000400000001000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 030000000400000005000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 020000000300000007000000
+    - spawnTime: 15
+      itemsInOrderIndexInBoardManager: 03000000
+    - spawnTime: 20
+      itemsInOrderIndexInBoardManager: 010000000200000000000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 030000000200000006000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 0300000004000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 030000000400000009000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 070000000400000004000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 050000000100000008000000
+    boardPercentages: 140000001000000010000000100000001000000010000000
