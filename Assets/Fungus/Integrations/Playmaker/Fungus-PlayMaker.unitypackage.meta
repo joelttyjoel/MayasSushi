@@ -1,8 +1,19 @@
 fileFormatVersion: 2
 guid: 81dbcde0f90df4e9ba9ca2794490e57a
+<<<<<<< Updated upstream
 timeCreated: 1491251885
 licenseType: Store
 DefaultImporter:
+=======
+<<<<<<< HEAD
+DefaultImporter:
+  externalObjects: {}
+=======
+timeCreated: 1491251885
+licenseType: Store
+DefaultImporter:
+>>>>>>> parent of 9dddc39... test
+>>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 
