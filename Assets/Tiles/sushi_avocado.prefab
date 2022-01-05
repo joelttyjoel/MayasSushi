@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 3803432174031283851}
   - component: {fileID: -75717302172152478}
   - component: {fileID: -2590394358788462397}
-  - component: {fileID: 7211264413400311361}
   m_Layer: 6
   m_Name: sushi_avocado
   m_TagString: Untagged
@@ -193,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.7, y: 7.5}
+  m_Size: {x: 13.8, y: 13.8}
   m_EdgeRadius: 0
 --- !u!114 &-2590394358788462397
 MonoBehaviour:
@@ -210,22 +209,6 @@ MonoBehaviour:
   particlesystem: {fileID: 8055010865114042834}
   positionGrid: {x: 0, y: 0, z: 0}
   wasInstantiatedFrom: {fileID: 0}
---- !u!70 &7211264413400311361
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636641730930025575}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 7.98, y: 14.87}
-  m_Direction: 0
 --- !u!1001 &5127968299282648909
 PrefabInstance:
   m_ObjectHideFlags: 0

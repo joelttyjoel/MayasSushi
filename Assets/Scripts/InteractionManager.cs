@@ -72,10 +72,12 @@ public class InteractionManager : MonoBehaviour
             hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 999999f, layerMaskTiles);
             if (hit.collider != null)
             {
+                GameObject hitObject = hit.collider.gameObject;
+
                 bool isAlreadyClicked = false;
                 foreach(GameObject a in clickedObjects)
                 {
-                    if(hit.collider.gameObject == a)
+                    if(hitObject == a)
                     {
                         isAlreadyClicked = true;
                     }
@@ -83,7 +85,64 @@ public class InteractionManager : MonoBehaviour
 
                 if(!isAlreadyClicked)
                 {
-                    clickedObjects.Add(hit.collider.gameObject);
+                    //check if is sidepiece
+                    if (clickedObjects.Count > 0)
+                    {
+                        Vector3Int clickedPosition3 = clickedObjects[clickedObjects.Count - 1].gameObject.GetComponent<TileManager>().positionGrid;
+                        Vector2Int clickedPosition = new Vector2Int(clickedPosition3.x, clickedPosition3.y);
+
+                        //first check if is side piece, if all those fail, check diagonals, if all those fail, stop
+                        //left
+                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y)))
+                        {
+                            goto passed;
+                        }
+                        //top
+                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y + 1)))
+                        {
+                            goto passed;
+                        }
+                        //right
+                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y)))
+                        {
+                            goto passed;
+                        }
+                        //bot
+                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y - 1)))
+                        {
+                            goto passed;
+                        }
+
+                        //topleft
+                        else if(hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y + 1)))
+                        {
+                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y));
+                        }
+                        //topright
+                        else if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y + 1)))
+                        {
+                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y));
+                        }
+                        //bottomleft
+                        else if(hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y - 1)))
+                        {
+                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y));
+                        }
+                        //bottomright
+                        else if(hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y - 1)))
+                        {
+                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y));
+                        }
+
+                        else
+                        {
+                            StopClick();
+                        }
+                    }
+                    //idc this is poopoo, how else to solve idk
+                    passed:
+
+                    clickedObjects.Add(hitObject);
                     hit.collider.GetComponent<TileManager>().SetSelected(true);
 
                     //remove nasty last one for mouse
@@ -95,9 +154,9 @@ public class InteractionManager : MonoBehaviour
                     //draw line
                     lineBetweenTiles.positionCount = lineBetweenTiles.positionCount + 3;
 
-                    lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 1, new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y, -1f));
-                    lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 2, new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y, -1f));
-                    lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 3, new Vector3(hit.collider.gameObject.transform.position.x, hit.collider.gameObject.transform.position.y, -1f));
+                    lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 1, new Vector3(hitObject.transform.position.x, hitObject.transform.position.y, -1f));
+                    lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 2, new Vector3(hitObject.transform.position.x, hitObject.transform.position.y, -1f));
+                    lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 3, new Vector3(hitObject.transform.position.x, hitObject.transform.position.y, -1f));
 
                     //add final point for mouse to mess aorund with
                     if(clickedObjects.Count < BoardManager.Instance.maxLengthSelected)
@@ -135,7 +194,6 @@ public class InteractionManager : MonoBehaviour
         {
             a.GetComponent<TileManager>().SetSelected(false);
         }
-
         clickedObjects.Clear();
 
         lineBetweenTiles.positionCount = 0;
