@@ -95,43 +95,22 @@ public class InteractionManager : MonoBehaviour
                         //left
                         if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y)))
                         {
-                            goto passed;
+                            //this is dumb but idk
                         }
                         //top
-                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y + 1)))
+                        else if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y + 1)))
                         {
-                            goto passed;
+
                         }
                         //right
-                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y)))
+                        else if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y)))
                         {
-                            goto passed;
+
                         }
                         //bot
-                        if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y - 1)))
+                        else if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y - 1)))
                         {
-                            goto passed;
-                        }
 
-                        //topleft
-                        else if(hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y + 1)))
-                        {
-                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y));
-                        }
-                        //topright
-                        else if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y + 1)))
-                        {
-                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y));
-                        }
-                        //bottomleft
-                        else if(hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y - 1)))
-                        {
-                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y));
-                        }
-                        //bottomright
-                        else if(hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y - 1)))
-                        {
-                            hitObject = BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x + 1, clickedPosition.y));
                         }
 
                         else
@@ -139,8 +118,6 @@ public class InteractionManager : MonoBehaviour
                             StopClick();
                         }
                     }
-                    //idc this is poopoo, how else to solve idk
-                    passed:
 
                     clickedObjects.Add(hitObject);
                     hit.collider.GetComponent<TileManager>().SetSelected(true);
@@ -176,7 +153,7 @@ public class InteractionManager : MonoBehaviour
             StopClick();
         }
     }
-
+    
     public RaycastHit2D CheckIfHitObject(LayerMask LayerMaskIn)
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
