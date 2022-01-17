@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58N42K891D",
         "name": "com.WinterMushroomGames.MayasSushi",
-        "processId": 5151,
+        "processId": 6508,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -48,6 +48,12 @@
             "deviceId": "R58N42K891D",
             "name": "com.WinterMushroomGames.MayasSushi",
             "processId": 5151,
+            "exited": false
+        },
+        {
+            "deviceId": "R58N42K891D",
+            "name": "com.WinterMushroomGames.MayasSushi",
+            "processId": 6508,
             "exited": false
         }
     ],
