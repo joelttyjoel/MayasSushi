@@ -365,6 +365,20 @@ public class BoardManager : MonoBehaviour
         return piecesToCreate[InIndex];
     }
 
+    public GameObject ReturnTileObjectFromPosition(Vector2Int position)
+    {
+        if(position.x > sizeX - 1 || position.x < 0)
+        {
+            return null;
+        }
+        else if (position.y > sizeY - 1 || position.y < 0)
+        {
+            return null;
+        }
+
+        return piecesOnBoard[position.x, position.y].gameObject;
+    }
+
     public void ClearWholeBoard()
     {
         StartCoroutine(ClearWholeBoardAnimation());

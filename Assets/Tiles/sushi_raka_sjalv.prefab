@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 8988017254500715959}
   - component: {fileID: 7396750284477197909}
   - component: {fileID: 693804897646725028}
-  - component: {fileID: 3720969935586008493}
   m_Layer: 6
   m_Name: sushi_raka_sjalv
   m_TagString: Untagged
@@ -193,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.7, y: 7.5}
+  m_Size: {x: 13.8, y: 13.8}
   m_EdgeRadius: 0
 --- !u!114 &693804897646725028
 MonoBehaviour:
@@ -210,22 +209,6 @@ MonoBehaviour:
   particlesystem: {fileID: 3703966793244129168}
   positionGrid: {x: 0, y: 0, z: 0}
   wasInstantiatedFrom: {fileID: 0}
---- !u!70 &3720969935586008493
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5921735581492129532}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 7.98, y: 14.87}
-  m_Direction: 0
 --- !u!1001 &1982767353273035023
 PrefabInstance:
   m_ObjectHideFlags: 0

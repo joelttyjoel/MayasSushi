@@ -25,7 +25,8 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    [Header("To calulate score, be in game scene and playing")]
+    [Header("To calulate score, be in game scene and playing, then click functions on this script, run calulate scores")]
+    [Header("Extra scenes, 0=mainmenu, 1=levelselect")]
 
     public float percentageOneStar;
     public float percentageTwoStars;
