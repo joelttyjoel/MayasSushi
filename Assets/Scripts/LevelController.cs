@@ -123,10 +123,10 @@ public class LevelController : MonoBehaviour
 
     private IEnumerator LoadScene(string SceneName)
     {
-        thisFlowChart.ExecuteBlock("FadeIn");
-        yield return new WaitForSeconds(0.3f);
+        thisFlowChart.ExecuteBlock("LoadingScreenIn");
+        yield return new WaitForSeconds(0.35f);
         yield return SceneManager.LoadSceneAsync(SceneName);
-        thisFlowChart.ExecuteBlock("FadeOut");
+        thisFlowChart.ExecuteBlock("LoadingScreenOut");
     }
 
     public void ResetCurrentLevel()
