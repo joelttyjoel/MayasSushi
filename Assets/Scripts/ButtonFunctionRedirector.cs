@@ -13,4 +13,9 @@ public class ButtonFunctionRedirector : MonoBehaviour
     {
         LevelController.Instance.LoadOtherSceneByIndex(index);
     }
+
+    public void LeveController_GoToLevelSelect()
+    {
+        LevelController.Instance.LoadOtherSceneByIndex(1);
+    }
 }

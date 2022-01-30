@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OrderStuff;
 using Fungus;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
@@ -31,6 +32,8 @@ public class LevelController : MonoBehaviour
     public float percentageOneStar;
     public float percentageTwoStars;
     public float percentageThreeStars;
+    public Sprite starBad;
+    public Sprite starGood;
     public int currentLevel;
     [Header("Scene References")]
     public string mainMenuName;
@@ -92,8 +95,35 @@ public class LevelController : MonoBehaviour
     public void StartEndLevelSequence()
     {
         //set score and run
-        GameObject.Find("Flowchart").GetComponent<Flowchart>().SetFloatVariable("Score", MyGameManager.Instance.GetScore());
-        GameObject.Find("Flowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
+        InteractionManager.Instance.canInteract = false;
+
+        //find percentage done
+        float percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
+
+        GameObject.Find("GameFlowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
+
+        if (percentageScore > percentageThreeStars)
+        {
+            GameObject.Find("Star3").GetComponent<Image>().sprite = starGood;
+            GameObject.Find("Star2").GetComponent<Image>().sprite = starGood;
+            GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        }
+        else if (percentageScore > percentageTwoStars)
+        {
+            GameObject.Find("Star2").GetComponent<Image>().sprite = starGood;
+            GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        }
+        else if (percentageScore > percentageOneStar)
+        {
+            GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        }
+        //else failed
+
+        if(percentageScore > PlayerPrefs.GetFloat((currentLevel + 1).ToString()))
+        {
+            PlayerPrefs.SetFloat((currentLevel + 1).ToString(), percentageScore);
+            Debug.Log("Score percentage: " + PlayerPrefs.GetFloat((currentLevel + 1).ToString()));
+        }
     }
 
     public void LoadOtherSceneByIndex(int index)
@@ -123,10 +153,10 @@ public class LevelController : MonoBehaviour
 
     private IEnumerator LoadScene(string SceneName)
     {
-        thisFlowChart.ExecuteBlock("FadeIn");
-        yield return new WaitForSeconds(0.3f);
+        thisFlowChart.ExecuteBlock("LoadingScreenIn");
+        yield return new WaitForSeconds(0.35f);
         yield return SceneManager.LoadSceneAsync(SceneName);
-        thisFlowChart.ExecuteBlock("FadeOut");
+        thisFlowChart.ExecuteBlock("LoadingScreenOut");
     }
 
     public void ResetCurrentLevel()
