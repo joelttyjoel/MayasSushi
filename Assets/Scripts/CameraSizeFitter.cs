@@ -24,7 +24,6 @@ public class CameraSizeFitter : MonoBehaviour
 
         if (currentAspectRatio < maxLimitAspectRatio)
         {
-            Debug.Log("fix");
             thisCamera.orthographicSize = fixedWidth / currentAspectRatio / 2;
         }
         else

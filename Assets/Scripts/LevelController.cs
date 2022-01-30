@@ -100,16 +100,30 @@ public class LevelController : MonoBehaviour
         //find percentage done
         float percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
 
-        Debug.Log(levelInformation.levels[currentLevel].score);
-        Debug.Log(MyGameManager.Instance.GetScore());
-        Debug.Log(percentageScore);
-        Debug.Log(percentageOneStar);
-
         GameObject.Find("GameFlowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
 
-        if (percentageScore > percentageOneStar) GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
-        if (percentageScore > percentageTwoStars) GameObject.Find("Star2").GetComponent<Image>().sprite = starGood;
-        if (percentageScore > percentageThreeStars) GameObject.Find("Star3").GetComponent<Image>().sprite = starGood;
+        if (percentageScore > percentageThreeStars)
+        {
+            GameObject.Find("Star3").GetComponent<Image>().sprite = starGood;
+            GameObject.Find("Star2").GetComponent<Image>().sprite = starGood;
+            GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        }
+        else if (percentageScore > percentageTwoStars)
+        {
+            GameObject.Find("Star2").GetComponent<Image>().sprite = starGood;
+            GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        }
+        else if (percentageScore > percentageOneStar)
+        {
+            GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        }
+        //else failed
+
+        if(percentageScore > PlayerPrefs.GetFloat((currentLevel + 1).ToString()))
+        {
+            PlayerPrefs.SetFloat((currentLevel + 1).ToString(), percentageScore);
+            Debug.Log("Score percentage: " + PlayerPrefs.GetFloat((currentLevel + 1).ToString()));
+        }
     }
 
     public void LoadOtherSceneByIndex(int index)
