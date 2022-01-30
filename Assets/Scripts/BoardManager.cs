@@ -344,7 +344,7 @@ public class BoardManager : MonoBehaviour
             {
                 if (!ConveyorController.Instance.AddPiece(c))
                 {
-                    GameObject.Find("Flowchart").GetComponent<Flowchart>().ExecuteBlock("ConveyorFull");
+                    GameObject.Find("GameFlowchart").GetComponent<Flowchart>().ExecuteBlock("ConveyorFull");
                     return false;
                 }
 

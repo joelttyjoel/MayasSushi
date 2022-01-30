@@ -47,7 +47,6 @@ public class MyGameManager : MonoBehaviour
     public List<GameObject> customerPlaces;
     public GameObject recipeBook;
     public GameObject pausMenu;
-    public Text scoreText;
     public float timeOnRecipeBookOpen;
     public float timeBetweenCustomerListChecks;
 
@@ -57,6 +56,7 @@ public class MyGameManager : MonoBehaviour
     private List<Customer> customerList;
     private float timer;
     private Queue<Customer> customersInQue;
+    private bool levelIsDone;
 
     private static MyGameManager _instance;
     public static MyGameManager Instance { get { return _instance; } }
@@ -76,7 +76,6 @@ public class MyGameManager : MonoBehaviour
     void Start()
     {
         score = 0;
-        scoreText.text = "Score: " + score;
 
         recipeBookState = false;
         recipeBook.SetActive(recipeBookState);
@@ -92,6 +91,8 @@ public class MyGameManager : MonoBehaviour
         //for first customer teehee
         AddCustomersToQue();
         AddCustromersFromQue();
+
+        levelIsDone = false;
     }
 
     void Update()
@@ -134,7 +135,7 @@ public class MyGameManager : MonoBehaviour
 
     private void CheckForEndLevel()
     {
-        if (customersInQue.Count == 0)
+        if (customersInQue.Count == 0 && customerList.Count == 0 && levelIsDone == false)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -144,8 +145,9 @@ public class MyGameManager : MonoBehaviour
                 }
             }
 
-            //extra meh might be good for somce odd thing idk
-            if (Time.timeSinceLevelLoad < 10f) return;
+            Debug.Log("LEVEL ENDING");
+
+            levelIsDone = true;
 
             //if got here, means noone has children
             LevelController.Instance.StartEndLevelSequence();
@@ -256,7 +258,5 @@ public class MyGameManager : MonoBehaviour
     public void AddScore(int InScore)
     {
         score += InScore;
-
-        scoreText.text = "Score: " + score;
     }
 }

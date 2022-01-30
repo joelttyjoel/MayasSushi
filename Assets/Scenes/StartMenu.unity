@@ -3911,9 +3911,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: starBad
+      value: 
+      objectReference: {fileID: 21300000, guid: 1dae45e15fc72ac478f7cfd62f9c61c8, type: 3}
+    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: starGood
+      value: 
+      objectReference: {fileID: 21300000, guid: b5f71d2632a3a214da0f610111ca1d04, type: 3}
+    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: levelInformation
       value: 
       objectReference: {fileID: 11400000, guid: 034d7f20d491a4b49a955caf884e0397, type: 2}
+    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: percentageOneStar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: percentageTwoStars
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: percentageThreeStars
+      value: 0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 8218883624193763843, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_Name
       value: LevelController

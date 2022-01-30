@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OrderStuff;
 using Fungus;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
@@ -31,6 +32,8 @@ public class LevelController : MonoBehaviour
     public float percentageOneStar;
     public float percentageTwoStars;
     public float percentageThreeStars;
+    public Sprite starBad;
+    public Sprite starGood;
     public int currentLevel;
     [Header("Scene References")]
     public string mainMenuName;
@@ -92,8 +95,21 @@ public class LevelController : MonoBehaviour
     public void StartEndLevelSequence()
     {
         //set score and run
-        GameObject.Find("Flowchart").GetComponent<Flowchart>().SetFloatVariable("Score", MyGameManager.Instance.GetScore());
-        GameObject.Find("Flowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
+        InteractionManager.Instance.canInteract = false;
+
+        //find percentage done
+        float percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
+
+        Debug.Log(levelInformation.levels[currentLevel].score);
+        Debug.Log(MyGameManager.Instance.GetScore());
+        Debug.Log(percentageScore);
+        Debug.Log(percentageOneStar);
+
+        GameObject.Find("GameFlowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
+
+        if (percentageScore > percentageOneStar) GameObject.Find("Star1").GetComponent<Image>().sprite = starGood;
+        if (percentageScore > percentageTwoStars) GameObject.Find("Star2").GetComponent<Image>().sprite = starGood;
+        if (percentageScore > percentageThreeStars) GameObject.Find("Star3").GetComponent<Image>().sprite = starGood;
     }
 
     public void LoadOtherSceneByIndex(int index)
