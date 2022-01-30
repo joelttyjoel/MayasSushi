@@ -319,3 +319,42 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000800000009000000
     boardPercentages: 140000001000000010000000100000001000000010000000
+  - score: 7400
+    customers:
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 09000000050000000800000006000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 09000000080000000700000006000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 07000000090000000600000006000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 05000000080000000800000009000000
+    boardPercentages: 140000001000000010000000100000001000000010000000
+  - score: 7400
+    customers:
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000020000000200000002000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000080000000200000008000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000080000000200000008000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000080000000800000008000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000080000000800000008000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000020000000200000008000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 02000000080000000800000008000000
+    boardPercentages: 320000000000000000000000320000000000000000000000
+  - score: 7400
+    customers:
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 09000000050000000800000006000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 09000000080000000700000006000000
+    - spawnTime: 0
+      itemsInOrderIndexInBoardManager: 07000000090000000600000006000000
+    - spawnTime: 5
+      itemsInOrderIndexInBoardManager: 05000000080000000800000009000000
+    boardPercentages: 140000001000000010000000100000001000000010000000
