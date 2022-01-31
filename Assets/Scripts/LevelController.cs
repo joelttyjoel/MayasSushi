@@ -61,7 +61,7 @@ public class LevelController : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        CustomersCheck();
+        //CustomersCheck();
     }
 
     private void Start()
@@ -154,8 +154,9 @@ public class LevelController : MonoBehaviour
     private IEnumerator LoadScene(string SceneName)
     {
         thisFlowChart.ExecuteBlock("LoadingScreenIn");
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.6f);
         yield return SceneManager.LoadSceneAsync(SceneName);
+        yield return new WaitForSeconds(0.25f);
         thisFlowChart.ExecuteBlock("LoadingScreenOut");
     }
 

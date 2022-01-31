@@ -13,10 +13,10 @@ public class LevelButtonController : MonoBehaviour
 
         float thisLevelPercentage = PlayerPrefs.GetFloat(thisButtonsLevel.ToString());
 
-        Debug.Log(thisLevelPercentage);
-        Debug.Log(PlayerPrefs.GetFloat("0"));
-        Debug.Log(PlayerPrefs.GetFloat("1"));
-        Debug.Log(PlayerPrefs.GetFloat("2"));
+        //Debug.Log(thisLevelPercentage);
+        //Debug.Log(PlayerPrefs.GetFloat("0"));
+        //Debug.Log(PlayerPrefs.GetFloat("1"));
+        //Debug.Log(PlayerPrefs.GetFloat("2"));
 
         if (thisLevelPercentage > LevelController.Instance.percentageThreeStars)
         {
