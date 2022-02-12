@@ -98,12 +98,14 @@ public class BoardManager : MonoBehaviour
 
     private void FillBoardFullStart()
     {
+        //first random fill
         for (int i = 0; i < sizeX; i++)
         {
             for (int k = 0; k < sizeY; k++)
             {
                 //ngl this part kinda smart
                 int randomIndex = Random.Range(0, 100);
+                int tempIndex = ingredientsPercentageList[randomIndex];
                 GameObject temp = Instantiate(ingredients[ingredientsPercentageList[randomIndex]]);
                 temp.transform.SetParent(transform);
 
@@ -111,13 +113,111 @@ public class BoardManager : MonoBehaviour
 
                 temp.GetComponent<TileManager>().positionGrid = gridPos;
 
-                temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[ingredientsPercentageList[randomIndex]];
+                temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[tempIndex];
+
+                temp.GetComponent<TileManager>().ingredientIndex = tempIndex;
 
                 temp.transform.position = grid.GetCellCenterWorld(gridPos);
 
                 piecesOnBoard[i, k] = new PieceOnBoard(gridPos, temp);
             }
         }
+
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int k = 0; k < sizeY; k++)
+            {
+                //first destroy initial random piece
+                GameObject a = piecesOnBoard[i, k].gameObject;
+                piecesOnBoard[a.GetComponent<TileManager>().positionGrid.x, a.GetComponent<TileManager>().positionGrid.y] = new PieceOnBoard(Vector3Int.zero, null);
+                Destroy(a);
+
+                //ngl this part kinda smart
+                //int randomIndex = Random.Range(0, 100);
+                //GameObject temp = Instantiate(ingredients[ingredientsPercentageList[randomIndex]]);
+                //temp.transform.SetParent(transform);
+                int tempIndex = ReturnCorrectIngredientIndex();
+                GameObject temp = Instantiate(ingredients[tempIndex]);
+
+                Vector3Int gridPos = new Vector3Int(i, k, 0);
+
+                temp.GetComponent<TileManager>().positionGrid = gridPos;
+
+                temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[tempIndex];
+
+                temp.GetComponent<TileManager>().ingredientIndex = tempIndex;
+
+                temp.transform.position = grid.GetCellCenterWorld(gridPos);
+
+                piecesOnBoard[i, k] = new PieceOnBoard(gridPos, temp);
+            }
+        }
+    }
+
+    private int ReturnCorrectIngredientIndex()
+    {
+        //yeah good luck understanding this, feels like spaghetti, kind of isnt but very unoptimized because idc rn. 
+        int pieceIndex = 0;
+
+        //go through entire board and count indexes.
+        List<int> ingredientCounts = new List<int>();
+        List<float> ingredientCountsPercentages = new List<float>();
+        foreach (int a in ingredientsPercentages)
+        {
+            ingredientCounts.Add(0);
+            ingredientCountsPercentages.Add(0f);
+        }
+
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int k = 0; k < sizeY; k++)
+            {
+                if (piecesOnBoard[i, k].gameObject == null) continue;
+
+                ingredientCounts[piecesOnBoard[i, k].gameObject.GetComponent<TileManager>().ingredientIndex]++;
+            }
+        }
+
+        for(int i = 0; i < ingredientsPercentages.Count - 1; i++)
+        {
+            if (ingredientsPercentages[i] == 0) ingredientCounts[i] += 100;
+
+            ingredientCountsPercentages[i] = (float)ingredientCounts[i] / (float)ingredientsPercentages[i];
+        }
+
+        //make list of least common pieces compared to percentage
+        List<float> ingredientsToChooseFrom = new List<float>();
+        List<int> ingredientsToChooseFromIndexes = new List<int>();
+
+        ingredientsToChooseFrom.Add(ingredientCountsPercentages[0]);
+        ingredientsToChooseFromIndexes.Add(0);
+
+        for(int i = 1; i < ingredientCounts.Count - 1; i++)
+        {
+            //if is lower than index before, clear list, add to list
+            if (ingredientCountsPercentages[i] < ingredientsToChooseFrom[0] + Random.Range(-0.05f, 0.05f))
+            {
+                ingredientsToChooseFrom.Clear();
+                ingredientsToChooseFromIndexes.Clear();
+                ingredientsToChooseFrom.Add(ingredientCountsPercentages[i]);
+                ingredientsToChooseFromIndexes.Add(i);
+            }
+
+            //if is same as index before, add to list
+            else if (ingredientCountsPercentages[i] == ingredientsToChooseFrom[0])
+            {
+                ingredientsToChooseFrom.Add(ingredientCountsPercentages[i]);
+                ingredientsToChooseFromIndexes.Add(i);
+            }
+
+            //if is greater than index before do nothing
+        }
+
+        //select on random from these
+        int randomIndexInSelectionList = Random.Range(0, ingredientsToChooseFromIndexes.Count - 1);
+        pieceIndex = ingredientsToChooseFromIndexes[randomIndexInSelectionList];
+        
+        return pieceIndex;
     }
 
     private void FillBoard(List<GameObject> clickedObjects)
@@ -143,9 +243,11 @@ public class BoardManager : MonoBehaviour
                 if (piecesOnBoard[k, i].gameObject == null)
                 {
                     //ngl this part kinda smart
-                    int randomIndex = Random.Range(0, 99);
-                    GameObject temp = Instantiate(ingredients[ingredientsPercentageList[randomIndex]]);
-                    temp.transform.SetParent(transform);
+                    //int randomIndex = Random.Range(0, 99);
+                    //GameObject temp = Instantiate(ingredients[ingredientsPercentageList[randomIndex]]);
+                    //temp.transform.SetParent(transform);
+                    int tempIndex = ReturnCorrectIngredientIndex();
+                    GameObject temp = Instantiate(ingredients[tempIndex]);
 
                     //set end state stuff before animation
 
@@ -153,7 +255,9 @@ public class BoardManager : MonoBehaviour
 
                     temp.GetComponent<TileManager>().positionGrid = gridPos;
 
-                    temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[ingredientsPercentageList[randomIndex]];
+                    temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[tempIndex];
+
+                    temp.GetComponent<TileManager>().ingredientIndex = tempIndex;
 
                     piecesOnBoard[k, i] = new PieceOnBoard(gridPos, temp);
 
@@ -189,7 +293,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    public void FillBoardOnlyRice(List<GameObject> clickedObjects)
+    public void AddToBoardOnlyRice(List<GameObject> clickedObjects)
     {
         foreach (GameObject a in clickedObjects)
         {
@@ -201,7 +305,9 @@ public class BoardManager : MonoBehaviour
 
             temp.GetComponent<TileManager>().positionGrid = gridPos;
 
-            temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[ingredientsPercentageList[0]];
+            temp.GetComponent<TileManager>().wasInstantiatedFrom = ingredients[0];
+
+            temp.GetComponent<TileManager>().ingredientIndex = 0;
 
             piecesOnBoard[gridPos.x, gridPos.y] = new PieceOnBoard(gridPos, temp);
 

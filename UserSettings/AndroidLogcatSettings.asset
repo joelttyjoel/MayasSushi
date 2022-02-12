@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "R58N42K891D",
     "m_SelectedPackage": {
-        "deviceId": "R58N42K891D",
-        "name": "com.WinterMushroomGames.MayasSushi",
-        "processId": 6508,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,50 +11,38 @@
         {
             "deviceId": "R58N42K891D",
             "name": "com.WinterMushroomGames.MayasSushi",
-            "processId": 5097,
-            "exited": true
-        },
-        {
-            "deviceId": "R58N42K891D",
-            "name": "com.WinterMushroomGames.MayasSushi",
-            "processId": 5838,
-            "exited": true
-        },
-        {
-            "deviceId": "R58N42K891D",
-            "name": "com.WinterMushroomGames.MayasSushi",
-            "processId": 31129,
-            "exited": true
-        },
-        {
-            "deviceId": "R58N42K891D",
-            "name": "com.WinterMushroomGames.MayasSushi",
-            "processId": 7773,
-            "exited": true
-        },
-        {
-            "deviceId": "R58N42K891D",
-            "name": "com.WinterMushroomGames.MayasSushi",
-            "processId": 32554,
-            "exited": true
-        },
-        {
-            "deviceId": "R58N42K891D",
-            "name": "com.WinterMushroomGames.MayasSushi",
             "processId": 4009,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R58N42K891D",
             "name": "com.WinterMushroomGames.MayasSushi",
             "processId": 5151,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R58N42K891D",
             "name": "com.WinterMushroomGames.MayasSushi",
             "processId": 6508,
+            "exited": true
+        },
+        {
+            "deviceId": "R58N42K891D",
+            "name": "com.WinterMushroomGames.MayasSushi",
+            "processId": 29700,
+            "exited": true
+        },
+        {
+            "deviceId": "R58N42K891D",
+            "name": "com.sec.android.app.launcher",
+            "processId": 5047,
             "exited": false
+        },
+        {
+            "deviceId": "R58N42K891D",
+            "name": "com.WinterMushroomGames.MayasSushi",
+            "processId": 13668,
+            "exited": true
         }
     ],
     "m_Tags": {

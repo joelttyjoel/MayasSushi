@@ -61,7 +61,7 @@ public class LevelController : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        CustomersCheck();
+        //CustomersCheck();
     }
 
     private void Start()
@@ -98,7 +98,15 @@ public class LevelController : MonoBehaviour
         InteractionManager.Instance.canInteract = false;
 
         //find percentage done
-        float percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
+        float percentageScore = 0f;
+        if (MyGameManager.Instance.GetScore() != 0)
+        {
+            percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
+        }
+        else
+        {
+            percentageScore = 0f;
+        }
 
         GameObject.Find("GameFlowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
 
@@ -154,8 +162,9 @@ public class LevelController : MonoBehaviour
     private IEnumerator LoadScene(string SceneName)
     {
         thisFlowChart.ExecuteBlock("LoadingScreenIn");
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.6f);
         yield return SceneManager.LoadSceneAsync(SceneName);
+        yield return new WaitForSeconds(0.25f);
         thisFlowChart.ExecuteBlock("LoadingScreenOut");
     }
 

@@ -96,7 +96,7 @@ public class RiceCookerController : MonoBehaviour, IBeginDragHandler, IDragHandl
             BoardManager.Instance.ClearBoardOfSelected(objectsToReplace);
 
             //first fill, so can just copy existing gameobjects
-            BoardManager.Instance.FillBoardOnlyRice(objectsToReplace);
+            BoardManager.Instance.AddToBoardOnlyRice(objectsToReplace);
         }
 
         riceOnMouse.transform.position = new Vector3(-9999, -9999, 0);
