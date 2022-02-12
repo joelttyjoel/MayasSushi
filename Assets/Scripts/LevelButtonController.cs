@@ -23,18 +23,18 @@ public class LevelButtonController : MonoBehaviour
             transform.Find("Star (2)").GetComponent<Image>().sprite = LevelController.Instance.starGood;
             transform.Find("Star (1)").GetComponent<Image>().sprite = LevelController.Instance.starGood;
             transform.Find("Star").GetComponent<Image>().sprite = LevelController.Instance.starGood;
-            Debug.Log("3 stars");
+            //Debug.Log("3 stars");
         }
         else if (thisLevelPercentage > LevelController.Instance.percentageTwoStars)
         {
             transform.Find("Star (1)").GetComponent<Image>().sprite = LevelController.Instance.starGood;
             transform.Find("Star").GetComponent<Image>().sprite = LevelController.Instance.starGood;
-            Debug.Log("2 stars");
+            //Debug.Log("2 stars");
         }
         else if (thisLevelPercentage > LevelController.Instance.percentageOneStar)
         {
             transform.Find("Star").GetComponent<Image>().sprite = LevelController.Instance.starGood;
-            Debug.Log("1 stars");
+            //Debug.Log("1 stars");
         }
     }
 }

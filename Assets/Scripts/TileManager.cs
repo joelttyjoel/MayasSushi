@@ -7,6 +7,7 @@ public class TileManager : MonoBehaviour
     public ParticleSystem particlesystem;
     public Vector3Int positionGrid;
     public GameObject wasInstantiatedFrom;
+    public int ingredientIndex;
 
     private bool isSelected;
 

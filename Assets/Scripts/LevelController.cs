@@ -98,7 +98,15 @@ public class LevelController : MonoBehaviour
         InteractionManager.Instance.canInteract = false;
 
         //find percentage done
-        float percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
+        float percentageScore = 0f;
+        if (MyGameManager.Instance.GetScore() != 0)
+        {
+            percentageScore = levelInformation.levels[currentLevel].score / MyGameManager.Instance.GetScore();
+        }
+        else
+        {
+            percentageScore = 0f;
+        }
 
         GameObject.Find("GameFlowchart").GetComponent<Flowchart>().ExecuteBlock("EndOfLevel");
 

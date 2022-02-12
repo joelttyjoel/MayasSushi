@@ -1537,7 +1537,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!224 &265367608
 RectTransform:
@@ -6574,15 +6574,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 217998352880855930, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4136376
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217998352880855930, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3024149
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217998352880855930, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15832141
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217998352880855930, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6611,18 +6611,6 @@ PrefabInstance:
     - target: {fileID: 217998352880855930, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
-      propertyPath: levelInformation
-      value: 
-      objectReference: {fileID: 11400000, guid: 034d7f20d491a4b49a955caf884e0397, type: 2}
-    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
-      propertyPath: listOfCustomersPerLevel.Array.data[0].listOfCustomers.Array.data[0].itemsInOrderIndexInBoardManager.Array.data[2]
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
-      propertyPath: listOfCustomersPerLevel.Array.data[1].listOfCustomers.Array.data[0].itemsInOrderIndexInBoardManager.Array.data[1]
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8218883624193763843, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_Name
@@ -8772,7 +8760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1518906792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8832,7 +8820,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 99
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1518906795
 RectTransform:
