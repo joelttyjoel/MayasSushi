@@ -98,7 +98,7 @@ MonoBehaviour:
   scoreMultiplierxLevel: 200
   GameSceneName: SceneTemplate
   levels:
-  - score: 9000
+  - score: 1400
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 03000000
@@ -108,8 +108,8 @@ MonoBehaviour:
       itemsInOrderIndexInBoardManager: 0300000003000000
     - spawnTime: 25
       itemsInOrderIndexInBoardManager: 030000000300000003000000
-    boardPercentages: 19000000000000004b000000000000000000000000000000
-  - score: 15800
+    boardPercentages: 28000000000000003c000000000000000000000000000000
+  - score: 3200
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 0000000000000000
@@ -121,8 +121,8 @@ MonoBehaviour:
       itemsInOrderIndexInBoardManager: 03000000000000000300000000000000
     - spawnTime: 20
       itemsInOrderIndexInBoardManager: 03000000000000000300000000000000
-    boardPercentages: 140000000000000028000000000000000000000028000000
-  - score: 7400
+    boardPercentages: 1e0000000000000023000000000000000000000023000000
+  - score: 2800
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 010000000000000001000000
@@ -135,7 +135,7 @@ MonoBehaviour:
     - spawnTime: 20
       itemsInOrderIndexInBoardManager: 010000000000000000000000
     boardPercentages: 190000001900000019000000000000000000000019000000
-  - score: 7400
+  - score: 5800
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 0400000004000000
@@ -157,8 +157,8 @@ MonoBehaviour:
       itemsInOrderIndexInBoardManager: 010000000400000000000000
     - spawnTime: 45
       itemsInOrderIndexInBoardManager: 030000000100000000000000
-    boardPercentages: 140000001400000014000000000000001400000014000000
-  - score: 7400
+    boardPercentages: 180000001300000013000000000000001300000013000000
+  - score: 7600
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 02000000020000000200000002000000
@@ -180,8 +180,8 @@ MonoBehaviour:
       itemsInOrderIndexInBoardManager: 02000000020000000200000002000000
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 02000000020000000200000002000000
-    boardPercentages: 1900000000000000000000004b0000000000000000000000
-  - score: 7400
+    boardPercentages: 230000000000000000000000410000000000000000000000
+  - score: 6000
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 04000000030000000400000001000000
@@ -204,7 +204,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000500000002000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 6800
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 05000000
@@ -227,7 +227,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000500000006000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 7200
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 06000000
@@ -250,7 +250,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000600000007000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 7600
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 07000000
@@ -273,7 +273,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000700000008000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 8200
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 08000000
@@ -296,7 +296,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000800000009000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 8400
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 09000000
@@ -319,7 +319,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 020000000800000009000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 6400
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 09000000050000000800000006000000
@@ -330,7 +330,7 @@ MonoBehaviour:
     - spawnTime: 5
       itemsInOrderIndexInBoardManager: 05000000080000000800000009000000
     boardPercentages: 140000001000000010000000100000001000000010000000
-  - score: 7400
+  - score: 8400
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 02000000020000000200000002000000
@@ -346,8 +346,8 @@ MonoBehaviour:
       itemsInOrderIndexInBoardManager: 02000000020000000200000008000000
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 02000000080000000800000008000000
-    boardPercentages: 320000000000000000000000320000000000000000000000
-  - score: 7400
+    boardPercentages: 230000000000000000000000410000000000000000000000
+  - score: 6400
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 09000000050000000800000006000000
