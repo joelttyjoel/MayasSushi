@@ -178,7 +178,7 @@ public class BoardManager : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < ingredientsPercentages.Count - 1; i++)
+        for(int i = 0; i < ingredientsPercentages.Count; i++)
         {
             if (ingredientsPercentages[i] == 0) ingredientCounts[i] += 100;
 
@@ -192,7 +192,7 @@ public class BoardManager : MonoBehaviour
         ingredientsToChooseFrom.Add(ingredientCountsPercentages[0]);
         ingredientsToChooseFromIndexes.Add(0);
 
-        for(int i = 1; i < ingredientCounts.Count - 1; i++)
+        for(int i = 1; i < ingredientCounts.Count; i++)
         {
             //if is lower than index before, clear list, add to list
             if (ingredientCountsPercentages[i] < ingredientsToChooseFrom[0] + Random.Range(-0.05f, 0.05f))

@@ -177,6 +177,11 @@ public class LevelController : MonoBehaviour
     {
         LoadOtherSceneByIndex(1);
     }
+
+    public void ResetPlayerprefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     
     public void GoToLevelOneTest()
     {
