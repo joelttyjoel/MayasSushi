@@ -722,7 +722,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 105939797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &105939797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,7 +871,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 111353835}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 19
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &111353835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,7 +1431,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 262085383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 23
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &262085383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,7 +1740,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2002,7 +2038,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 394594506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 22
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &394594506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2906,7 +2954,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 488504692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadOtherLeveByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &488504692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6510,7 +6570,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1095691737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1095691737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6704,7 +6776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1110792199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 18
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1110792199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11607,7 +11691,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1955875309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 16
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955875309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12544,7 +12640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2058485165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 21
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2058485165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13034,7 +13142,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2131657946}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 265367609}
+        m_TargetAssemblyTypeName: ButtonFunctionRedirector, Assembly-CSharp
+        m_MethodName: LevelController_LoadLevelByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2131657946
 MonoBehaviour:
   m_ObjectHideFlags: 0
