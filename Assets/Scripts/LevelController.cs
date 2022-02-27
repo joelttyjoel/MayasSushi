@@ -165,6 +165,9 @@ public class LevelController : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         yield return SceneManager.LoadSceneAsync(SceneName);
         yield return new WaitForSeconds(0.25f);
+        bool isLevelSelect = false;
+        if (SceneName == levelSelectName) isLevelSelect = true;
+        TutorialManager.Instance.LoadLevelTutorialCheck(isLevelSelect, currentLevel);
         thisFlowChart.ExecuteBlock("LoadingScreenOut");
     }
 
