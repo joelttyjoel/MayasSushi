@@ -18,4 +18,9 @@ public class ButtonFunctionRedirector : MonoBehaviour
     {
         LevelController.Instance.LoadOtherSceneByIndex(1);
     }
+
+    public void LevelController_ResetProgress()
+    {
+        LevelController.Instance.ResetPlayerprefs();
+    }
 }

@@ -217,8 +217,8 @@ public class MyGameManager : MonoBehaviour
 
         //set time
 
-        if (recipeBookState) Time.timeScale = timeOnRecipeBookOpen;
-        else Time.timeScale = 1f;
+        if (recipeBookState) SetTimescale(timeOnRecipeBookOpen);
+        else SetTimescale(1f);
 
     }
 
@@ -235,8 +235,8 @@ public class MyGameManager : MonoBehaviour
 
         //set time
 
-        if (pausMenuState) Time.timeScale = 0f;
-        else Time.timeScale = 1f;
+        if (pausMenuState) SetTimescale(0f);
+        else SetTimescale(1f);
 
     }
 
@@ -258,5 +258,10 @@ public class MyGameManager : MonoBehaviour
     public void AddScore(int InScore)
     {
         score += InScore;
+    }
+
+    public void SetTimescale(float timescale)
+    {
+        Time.timeScale = timescale;
     }
 }
