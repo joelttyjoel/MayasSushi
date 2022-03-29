@@ -1725,6 +1725,7 @@ MonoBehaviour:
   percentageOneStar: 0.5
   percentageTwoStars: 0.85
   percentageThreeStars: 0.95
+  alphaLevelsNotUnlocked: {r: 1, g: 1, b: 1, a: 0.53333336}
   starBad: {fileID: 21300000, guid: 1dae45e15fc72ac478f7cfd62f9c61c8, type: 3}
   starGood: {fileID: 21300000, guid: b5f71d2632a3a214da0f610111ca1d04, type: 3}
   currentLevel: 0

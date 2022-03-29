@@ -23,4 +23,9 @@ public class ButtonFunctionRedirector : MonoBehaviour
     {
         LevelController.Instance.ResetPlayerprefs();
     }
+
+    public void InteractionManager_ToggleInteractable()
+    {
+        InteractionManager.Instance.ToggleInteractable();
+    }
 }

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: Maya
+  nameText: Grandpa
   nameColor: {r: 0.6862745, g: 0.3803922, b: 0.49411768, a: 1}
   soundEffect: {fileID: 8300000, guid: 0621eb84665e6a149a3d98989785b994, type: 3}
   portraits: []

@@ -1481,7 +1481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3717331683330770912}
   - component: {fileID: 3717331683330770926}
-  - component: {fileID: 3717331683330770924}
+  - component: {fileID: -5553042061456712506}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -1497,7 +1497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3717331683330770915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 2.948, z: 43.72848}
+  m_LocalPosition: {x: 0.17, y: 2.948, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7075587066804344334}
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   averageLeaveTime: 60
   randomRange: 10
   selectedOffset: {x: 0, y: 0.5, z: 0}
---- !u!50 &3717331683330770924
+--- !u!50 &-5553042061456712506
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

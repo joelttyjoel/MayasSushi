@@ -16,7 +16,6 @@ public class ConveyorController : MonoBehaviour
         }
     }
 
-    public Material particleMaterial;
     public Sprite[] plateSprites0to3 = new Sprite[4];
     public Sprite[] dragonSprites = new Sprite[5];
     public Sprite[] rainbowSprites = new Sprite[5];
@@ -129,7 +128,6 @@ public class ConveyorController : MonoBehaviour
                 pieces.Add(tempPiece);
 
                 //play correct particlesystem
-                particleMaterial.SetTexture("_MainTex", PieceToCreate.sprite.texture);
                 a.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
 
                 return true;
@@ -170,7 +168,6 @@ public class ConveyorController : MonoBehaviour
                 pieces.Add(tempPiece);
 
                 //play correct particlesystem
-                particleMaterial.SetTexture("_MainTex", PieceToCreate.sprite.texture);
                 a.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
 
                 index++;

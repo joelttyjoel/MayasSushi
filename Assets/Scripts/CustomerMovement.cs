@@ -22,9 +22,43 @@ public class CustomerMovement : MonoBehaviour
     {
         if (!InteractionManager.Instance.canInteract) return;
 
-        RaycastHit2D objectHitPerhaps = InteractionManager.Instance.CheckIfHitObject(InteractionManager.Instance.layerMaskCustomers);
+        //first check for edge case where selected is null but is moving, happens if customer leaves while mid air
+        if(isMovingCustomer && customerSelected == null)
+        {
+            isMovingCustomer = false;
+        }
 
-        if (objectHitPerhaps.collider != null)
+        RaycastHit2D objectHitPerhaps = InteractionManager.Instance.CheckIfHitObject(InteractionManager.Instance.layerMaskCustomers);
+        //has clicked air and shuold deselect if is moving customer
+        if (objectHitPerhaps.collider == null)
+        {
+            if (isMovingCustomer)
+            {
+                isMovingCustomer = false;
+                customerSelected.SetSelected(false);
+            }
+
+            return;
+        }
+
+        //edge case where selected is null but is moving, happens if customer leaves while mid air
+        if (isMovingCustomer && customerSelected == null)
+        {
+            isMovingCustomer = false;
+        }
+
+        //check if clicked empty space with no customer
+        if (objectHitPerhaps.collider.GetComponentInParent<CustomerController>() == null)
+        {
+            if (isMovingCustomer)
+            {
+                isMovingCustomer = false;
+                customerSelected.SetSelected(false);
+                
+                MyGameManager.Instance.PlaceCustomerAtPlace(customerSelected, objectHitPerhaps.collider.gameObject);
+            }
+        }
+        else
         {
             //has hit customer, now if moving customer already, if is same customer deselect, if other customer switch places
             if(isMovingCustomer)
@@ -43,15 +77,6 @@ public class CustomerMovement : MonoBehaviour
 
                 customerSelected = objectHitPerhaps.collider.GetComponentInParent<CustomerController>();
                 customerSelected.SetSelected(true);
-            }
-        }
-        //has clicked air and shuold deselect if is moving customer
-        else
-        {
-            if(isMovingCustomer)
-            {
-                isMovingCustomer = false;
-                customerSelected.SetSelected(false);
             }
         }
     }

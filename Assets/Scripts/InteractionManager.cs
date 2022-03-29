@@ -5,10 +5,11 @@ using UnityEngine;
 public class InteractionManager : MonoBehaviour
 {
     public LayerMask layerMaskBoard;
-    public BoxCollider2D boardArea;
     public LayerMask layerMaskTiles;
     public LayerMask layerMaskCustomers;
     public bool canInteract;
+    public Color noRecipeSelectedColor;
+    public Color yesRecipeSelectedColor;
 
     private List<GameObject> clickedObjects;
     private LineRenderer lineBetweenTiles;
@@ -47,25 +48,39 @@ public class InteractionManager : MonoBehaviour
         //push
         if(Input.GetMouseButton(0))
         {
-            if (clickedObjects.Count >= BoardManager.Instance.maxLengthSelected) return;
-
+            //first check if inside board area
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 999999f, layerMaskBoard);
+            //if hits border of board
+            if (hit.collider == null)
+            {
+                BoardManager.Instance.CheckSelection(clickedObjects);
+
+                BoardManager.Instance.HideDisplayRecipeBox();
+
+                StopClick();
+
+                return;
+            }
+
+            if (clickedObjects.Count >= BoardManager.Instance.maxLengthSelected) return;
+
+            //color check
+            if(BoardManager.Instance.CheckSelectionIsRecipe(clickedObjects))
+            {
+                lineBetweenTiles.material.color = yesRecipeSelectedColor;
+            }
+            else
+            {
+                lineBetweenTiles.material.color = noRecipeSelectedColor;
+            }
 
             //draw first line point on mouse pos
             if(lineBetweenTiles.positionCount > 0)
             {
                 lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 1, new Vector3(mousePos2D.x, mousePos2D.y, -1f));
-            }
-
-            //first check if inside board area
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 999999f, layerMaskBoard);
-            //if hits border of board
-            if (hit.collider == null)
-            {
-                StopClick();
-
-                return;
             }
 
             //then check objects clicked
@@ -95,7 +110,7 @@ public class InteractionManager : MonoBehaviour
                         //left
                         if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x - 1, clickedPosition.y)))
                         {
-                            //this is dumb but idk
+                            //this is dumb but idk rn
                         }
                         //top
                         else if (hitObject == BoardManager.Instance.ReturnTileObjectFromPosition(new Vector2Int(clickedPosition.x, clickedPosition.y + 1)))
@@ -150,6 +165,8 @@ public class InteractionManager : MonoBehaviour
         {
             BoardManager.Instance.CheckSelection(clickedObjects);
 
+            BoardManager.Instance.HideDisplayRecipeBox();
+
             StopClick();
         }
     }
@@ -163,6 +180,11 @@ public class InteractionManager : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, 999999f, LayerMaskIn);
 
         return hit;
+    }
+
+    public void ToggleInteractable()
+    {
+        canInteract = !canInteract;
     }
 
     private void StopClick()

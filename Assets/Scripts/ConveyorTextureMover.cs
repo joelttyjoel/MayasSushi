@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class ConveyorTextureMover : MonoBehaviour
 {
-    [Header("ADD ONE CHILD IN MIDDLE TO START")]
+    public float timeBeforeSpawnNewPiece;
     public Vector3 spawnPoint;
-    public Vector3 middlePoint;
     public Vector3 endPoint;
     public Vector3 movementVector;
     public float speed;
     public GameObject trackPrefab;
-    public float middlePointRange;
 
     private float distanceSpawnEnd;
     private List<GameObject> tracks;
-    private bool hasHitMiddle = false;
+    private float loopingTimer;
 
     void Start()
     {
         distanceSpawnEnd = Vector3.Distance(spawnPoint, endPoint);
+        loopingTimer = timeBeforeSpawnNewPiece;
 
         tracks = new List<GameObject>();
         tracks.Add(transform.GetChild(0).gameObject);
+        tracks.Add(transform.GetChild(1).gameObject);
+        tracks.Add(transform.GetChild(2).gameObject);
     }
 
     void Update()
     {
+        //check if should spawn another
+        loopingTimer -= Time.deltaTime;
+        if(loopingTimer < 0f)
+        {
+            tracks.Add(CreateNewTrack());
+            loopingTimer = timeBeforeSpawnNewPiece;
+        }
+
         Vector3 movementOffset = Time.deltaTime * speed * movementVector;
 
         //move all pieces
@@ -41,25 +50,6 @@ public class ConveyorTextureMover : MonoBehaviour
             GameObject.Destroy(tracks[0]);
             tracks.RemoveAt(0);
         }
-
-        //if one item passes middle, create new piece
-        foreach (GameObject a in tracks)
-        {
-            if (!hasHitMiddle && Vector3.Distance(a.transform.position, middlePoint) < middlePointRange)
-            {
-                tracks.Add(CreateNewTrack());
-                hasHitMiddle = true;
-                StartCoroutine(MiddlePointCooldown());
-                break;
-            }
-        }
-    }
-
-    private IEnumerator MiddlePointCooldown()
-    {
-        hasHitMiddle = true;
-        yield return new WaitForSeconds(1f);
-        hasHitMiddle = false;
     }
 
     private GameObject CreateNewTrack()
@@ -75,7 +65,6 @@ public class ConveyorTextureMover : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(spawnPoint, 0.1f);
-        Gizmos.DrawSphere(middlePoint, 0.1f);
         Gizmos.DrawSphere(endPoint, 0.1f);
     }
 }

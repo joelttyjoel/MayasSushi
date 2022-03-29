@@ -101,27 +101,25 @@ MonoBehaviour:
   - score: 1400
     customers:
     - spawnTime: 0
-      itemsInOrderIndexInBoardManager: 03000000
-    - spawnTime: 10
-      itemsInOrderIndexInBoardManager: 03000000
-    - spawnTime: 20
-      itemsInOrderIndexInBoardManager: 0300000003000000
+      itemsInOrderIndexInBoardManager: 01000000
     - spawnTime: 25
-      itemsInOrderIndexInBoardManager: 030000000300000003000000
-    boardPercentages: 28000000000000003c000000000000000000000000000000
+      itemsInOrderIndexInBoardManager: 01000000
+    - spawnTime: 35
+      itemsInOrderIndexInBoardManager: 0100000001000000
+    - spawnTime: 40
+      itemsInOrderIndexInBoardManager: 010000000100000001000000
+    boardPercentages: 320000003200000000000000000000000000000000000000
   - score: 3200
     customers:
     - spawnTime: 0
-      itemsInOrderIndexInBoardManager: 0000000000000000
-    - spawnTime: 10
-      itemsInOrderIndexInBoardManager: 000000000300000000000000
-    - spawnTime: 10
-      itemsInOrderIndexInBoardManager: 030000000000000003000000
-    - spawnTime: 20
-      itemsInOrderIndexInBoardManager: 03000000000000000300000000000000
-    - spawnTime: 20
-      itemsInOrderIndexInBoardManager: 03000000000000000300000000000000
-    boardPercentages: 1e0000000000000023000000000000000000000023000000
+      itemsInOrderIndexInBoardManager: 01000000
+    - spawnTime: 15
+      itemsInOrderIndexInBoardManager: 01000000010000000100000001000000
+    - spawnTime: 25
+      itemsInOrderIndexInBoardManager: 01000000
+    - spawnTime: 25
+      itemsInOrderIndexInBoardManager: 01000000
+    boardPercentages: 000000006400000000000000000000000000000000000000
   - score: 2800
     customers:
     - spawnTime: 0

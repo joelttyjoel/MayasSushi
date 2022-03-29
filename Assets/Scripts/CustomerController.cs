@@ -82,6 +82,7 @@ public class CustomerController : MonoBehaviour
     private bool isSelected;
     private int currentEmotion;
     private int defaultEmotion;
+    private bool canPickStuffUp;
 
     public void CreateOrder(List<int> InItemIndexes)
     {
@@ -175,6 +176,9 @@ public class CustomerController : MonoBehaviour
         startPosition = transform.position;
 
         isSelected = false;
+
+        canPickStuffUp = false;
+        StartCoroutine(EnterAnimation());
 
         leftHandStartPosition = leftHand.gameObject.transform.localPosition;
         rightHandStartPosition = rightHand.gameObject.transform.localPosition;
@@ -270,6 +274,8 @@ public class CustomerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.IsTouching(grabCollider)) return;
+
+        if (!canPickStuffUp) return;
 
         Sprite collidedPieceSprite = collision.gameObject.GetComponent<SpriteRenderer>().sprite;
         //Debug.Log("enterd" + gameObject.name);
@@ -386,5 +392,26 @@ public class CustomerController : MonoBehaviour
         StopAllCoroutines();
 
         Destroy(this.gameObject);
+    }
+
+    private IEnumerator EnterAnimation()
+    {
+        canPickStuffUp = false;
+
+        //blind animation because cool
+        yield return new WaitForSeconds(0.25f);
+        SetEmotion(1);
+        eyeSprite.sprite = thisBlinkedEyeSprite;
+        yield return new WaitForSeconds(timeForBlink);
+        eyeSprite.sprite = theseEyeSprites[currentEmotion];
+        yield return new WaitForSeconds(0.1f);
+        eyeSprite.sprite = thisBlinkedEyeSprite;
+        yield return new WaitForSeconds(timeForBlink);
+        eyeSprite.sprite = theseEyeSprites[currentEmotion];
+
+        yield return new WaitForSeconds(0.9f);
+        SetEmotion(0);
+
+        canPickStuffUp = true;
     }
 }

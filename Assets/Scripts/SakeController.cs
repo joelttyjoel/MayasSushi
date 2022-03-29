@@ -81,7 +81,7 @@ public class SakeController : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         isUsingsake = false;
 
         RaycastHit2D objectHitPerhaps = InteractionManager.Instance.CheckIfHitObject(InteractionManager.Instance.layerMaskCustomers);
-        if (objectHitPerhaps.collider != null)
+        if (objectHitPerhaps.collider != null && objectHitPerhaps.collider.GetComponentInParent<CustomerController>() != null)
         {
             objectHitPerhaps.collider.GetComponentInParent<CustomerController>().RecieveDrink();
 

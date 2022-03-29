@@ -276,6 +276,7 @@ namespace Fungus
                         GameObject go = Instantiate(prefab) as GameObject;
                         go.SetActive(false);
                         go.name = "SayDialog";
+                        go.transform.localPosition = new Vector3(0, 0, 0);
                         ActiveSayDialog = go.GetComponent<SayDialog>();
                     }
                 }

@@ -35,6 +35,10 @@ public class BoardManager : MonoBehaviour
     public float fallingTimePerTile;
     public AnimationCurve fallingAnimation;
     public GameObject gridObject;
+    public GameObject displayRecipeBox;
+    public SpriteRenderer recipeBoxSpriteRenderer;
+    public SpriteRenderer recipeBoxPlateSpriteRenderer;
+    public Sprite noRecipeSprite;
     public int sizeX;
     public int sizeY;
     public int minLengthSelected;
@@ -195,7 +199,7 @@ public class BoardManager : MonoBehaviour
         for(int i = 1; i < ingredientCounts.Count; i++)
         {
             //if is lower than index before, clear list, add to list
-            if (ingredientCountsPercentages[i] < ingredientsToChooseFrom[0] + Random.Range(-0.05f, 0.05f))
+            if (ingredientCountsPercentages[i] < ingredientsToChooseFrom[0] + Random.Range(-0.1f, 0.1f))
             {
                 ingredientsToChooseFrom.Clear();
                 ingredientsToChooseFromIndexes.Clear();
@@ -464,6 +468,70 @@ public class BoardManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    public bool CheckSelectionIsRecipe(List<GameObject> clickedObjects)
+    {
+        List<GameObject> copyClickedObjects = new List<GameObject>();
+        //go through every possible recipy
+        //for ever ingredient in the recipe, check if its same as ingredient in clicked objects, if at the end bot
+        int index = 0;
+        foreach (PieceToCreate c in piecesToCreate)
+        {
+            //if they are not same length, quick skip
+            if (c.ingredients.Count != clickedObjects.Count) continue;
+
+            copyClickedObjects.Clear();
+            foreach (GameObject a in clickedObjects)
+            {
+                copyClickedObjects.Add(a);
+            }
+
+            int correctCount = 0;
+
+            for (int i = 0; i < c.ingredients.Count; i++)
+            {
+                foreach (GameObject b in copyClickedObjects)
+                {
+                    if (c.ingredients[i] == b.GetComponent<TileManager>().wasInstantiatedFrom)
+                    {
+                        correctCount++;
+                        copyClickedObjects.Remove(b);
+                        break;
+                    }
+                }
+            }
+
+            //Debug.Log(correctCount);
+
+            //Debug.Log(correctCount);
+            //Debug.Log(c.ingredients.Count);
+
+            if (correctCount == c.ingredients.Count)
+            {
+                //display cool box
+                displayRecipeBox.SetActive(true);
+                recipeBoxSpriteRenderer.sprite = c.sprite;
+                recipeBoxPlateSpriteRenderer.sprite = ConveyorController.Instance.plateSprites0to3[c.pieceLevel0to3];
+
+                return true;
+            }
+
+            index++;
+        }
+
+        //set cool box sprite to poopoo
+        //display cool box
+        displayRecipeBox.SetActive(true);
+        recipeBoxSpriteRenderer.sprite = noRecipeSprite;
+        recipeBoxPlateSpriteRenderer.sprite = ConveyorController.Instance.plateSprites0to3[0];
+
+        return false;
+    }
+
+    public void HideDisplayRecipeBox()
+    {
+        displayRecipeBox.SetActive(false);
     }
 
     public PieceToCreate ReturnPieceFromIndex(int InIndex)

@@ -162,7 +162,7 @@ public class MyGameManager : MonoBehaviour
             {
                 GameObject temp = GameObject.Instantiate(customerPrefab);
 
-                temp.transform.position = customerPlaces[i].transform.position;
+                temp.transform.position = customerPlaces[i].transform.position + new Vector3(0, 0, -1);
                 temp.transform.SetParent(customerPlaces[i].transform);
 
                 temp.GetComponent<CustomerController>().CreateOrder(customersInQue.Dequeue().itemsInOrderIndexInBoardManager);
@@ -181,13 +181,23 @@ public class MyGameManager : MonoBehaviour
         CustomerController CustomerController1 = Customer1.GetComponent<CustomerController>();
         CustomerController CustomerController2 = Customer2.GetComponent<CustomerController>();
 
-        Customer1.transform.position = CustomerPlace2.transform.position;
+        Customer1.transform.position = CustomerPlace2.transform.position + new Vector3(0, 0, -1); ;
         Customer1.transform.SetParent(CustomerPlace2.transform);
-        CustomerController1.startPosition = CustomerPlace2.transform.position;
+        CustomerController1.startPosition = CustomerPlace2.transform.position + new Vector3(0, 0, -1);
 
-        Customer2.transform.position = CustomerPlace1.transform.position;
+        Customer2.transform.position = CustomerPlace1.transform.position + new Vector3(0, 0, -1);
         Customer2.transform.SetParent(CustomerPlace1.transform);
-        CustomerController2.startPosition = CustomerPlace1.transform.position;
+        CustomerController2.startPosition = CustomerPlace1.transform.position + new Vector3(0, 0, -1);
+    }
+
+    public void PlaceCustomerAtPlace(CustomerController Customer, GameObject CustomerPlaceTo)
+    {
+        if(CustomerPlaceTo.transform.childCount == 0)
+        {
+            Customer.transform.position = CustomerPlaceTo.transform.position + new Vector3(0, 0, -1);
+            Customer.transform.SetParent(CustomerPlaceTo.transform);
+            Customer.startPosition = CustomerPlaceTo.transform.position + new Vector3(0, 0, -1);
+        }
     }
 
     public void ClearWholeBoard()

@@ -62,6 +62,15 @@ public class TutorialManager : MonoBehaviour
             case 1:
                     tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
                 break;
+            case 2:
+                tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
+                break;
+            case 3:
+                tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
+                break;
+            case 4:
+                tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
+                break;
         }
     }
 

@@ -32,6 +32,7 @@ public class LevelController : MonoBehaviour
     public float percentageOneStar;
     public float percentageTwoStars;
     public float percentageThreeStars;
+    public Color alphaLevelsNotUnlocked;
     public Sprite starBad;
     public Sprite starGood;
     public int currentLevel;
