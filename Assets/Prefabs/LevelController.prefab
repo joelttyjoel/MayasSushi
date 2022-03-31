@@ -1686,6 +1686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 217998352880855930}
   - component: {fileID: 6425073110356410599}
+  - component: {fileID: 1061471813441355456}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -1732,6 +1733,18 @@ MonoBehaviour:
   mainMenuName: StartMenu
   levelSelectName: LevelSelect
   levelInformation: {fileID: 11400000, guid: 034d7f20d491a4b49a955caf884e0397, type: 2}
+--- !u!114 &1061471813441355456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218883624193763843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0dd001f692891439242d8b2f52235a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1061471813837168872
 PrefabInstance:
   m_ObjectHideFlags: 0

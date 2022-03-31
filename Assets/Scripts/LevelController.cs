@@ -133,6 +133,12 @@ public class LevelController : MonoBehaviour
             PlayerPrefs.SetFloat((currentLevel + 1).ToString(), percentageScore);
             Debug.Log("Score percentage: " + PlayerPrefs.GetFloat((currentLevel + 1).ToString()));
         }
+
+        //ad check
+        if (currentLevel % 3 == 0)
+        {
+            GetComponent<IntestitialAdPlayer>().ShowAd();
+        }
     }
 
     public void LoadOtherSceneByIndex(int index)
@@ -162,6 +168,9 @@ public class LevelController : MonoBehaviour
 
     private IEnumerator LoadScene(string SceneName)
     {
+        thisFlowChart.StopAllBlocks();
+        TutorialManager.Instance.tutorialFlowchart.StopAllBlocks();
+
         thisFlowChart.ExecuteBlock("LoadingScreenIn");
         yield return new WaitForSeconds(0.6f);
         yield return SceneManager.LoadSceneAsync(SceneName);

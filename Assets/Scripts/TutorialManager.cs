@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
     public Flowchart tutorialFlowchart;
     public string hasShownFirstPlayInstructions;
     public string hasShownLevelSelectInstructions;
+    public List<int> levelsWithTutorial;
 
     private bool timeIsOn;
 
@@ -54,23 +55,12 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        switch (currentLevel)
+        foreach(int a in levelsWithTutorial)
         {
-            case 0:
-                    tutorialFlowchart.ExecuteBlock("LevelOneTutorial");
-                break;
-            case 1:
-                    tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
-                break;
-            case 2:
-                tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
-                break;
-            case 3:
-                tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
-                break;
-            case 4:
-                tutorialFlowchart.ExecuteBlock("LevelTwoTutorial");
-                break;
+            if(currentLevel == a)
+            {
+                tutorialFlowchart.ExecuteBlock("Level" + currentLevel + "Tutorial");
+            }
         }
     }
 

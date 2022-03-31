@@ -28,4 +28,9 @@ public class ButtonFunctionRedirector : MonoBehaviour
     {
         InteractionManager.Instance.ToggleInteractable();
     }
+
+    public void GameManager_ToggleRecipeBook()
+    {
+        MyGameManager.Instance.ToggleRecipeBook();
+    }
 }

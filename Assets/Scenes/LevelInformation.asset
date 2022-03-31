@@ -102,44 +102,44 @@ MonoBehaviour:
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 01000000
-    - spawnTime: 25
+    - spawnTime: 30
       itemsInOrderIndexInBoardManager: 01000000
     - spawnTime: 35
       itemsInOrderIndexInBoardManager: 0100000001000000
     - spawnTime: 40
       itemsInOrderIndexInBoardManager: 010000000100000001000000
     boardPercentages: 320000003200000000000000000000000000000000000000
-  - score: 3200
+  - score: 1000
     customers:
     - spawnTime: 0
       itemsInOrderIndexInBoardManager: 01000000
-    - spawnTime: 15
-      itemsInOrderIndexInBoardManager: 01000000010000000100000001000000
+    - spawnTime: 20
+      itemsInOrderIndexInBoardManager: 0100000001000000
     - spawnTime: 25
       itemsInOrderIndexInBoardManager: 01000000
     - spawnTime: 25
       itemsInOrderIndexInBoardManager: 01000000
     boardPercentages: 000000006400000000000000000000000000000000000000
-  - score: 2800
+  - score: 2600
     customers:
-    - spawnTime: 0
-      itemsInOrderIndexInBoardManager: 010000000000000001000000
     - spawnTime: 5
-      itemsInOrderIndexInBoardManager: 010000000100000003000000
-    - spawnTime: 10
-      itemsInOrderIndexInBoardManager: 000000000100000003000000
-    - spawnTime: 10
-      itemsInOrderIndexInBoardManager: 0000000000000000
-    - spawnTime: 20
-      itemsInOrderIndexInBoardManager: 010000000000000000000000
-    boardPercentages: 190000001900000019000000000000000000000019000000
+      itemsInOrderIndexInBoardManager: 0100000001000000
+    - spawnTime: 25
+      itemsInOrderIndexInBoardManager: 010000000100000000000000
+    - spawnTime: 35
+      itemsInOrderIndexInBoardManager: 000000000100000001000000
+    - spawnTime: 40
+      itemsInOrderIndexInBoardManager: 0100000001000000
+    - spawnTime: 40
+      itemsInOrderIndexInBoardManager: 010000000100000000000000
+    boardPercentages: 2d0000002d0000000000000000000000000000000a000000
   - score: 5800
     customers:
-    - spawnTime: 0
-      itemsInOrderIndexInBoardManager: 0400000004000000
-    - spawnTime: 5
-      itemsInOrderIndexInBoardManager: 030000000400000000000000
     - spawnTime: 10
+      itemsInOrderIndexInBoardManager: 0400000004000000
+    - spawnTime: 10
+      itemsInOrderIndexInBoardManager: 030000000400000000000000
+    - spawnTime: 15
       itemsInOrderIndexInBoardManager: 010000000300000000000000
     - spawnTime: 15
       itemsInOrderIndexInBoardManager: 0300000003000000
