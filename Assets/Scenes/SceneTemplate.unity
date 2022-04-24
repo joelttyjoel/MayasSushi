@@ -18427,6 +18427,10 @@ PrefabInstance:
       propertyPath: itemId
       value: 59
       objectReference: {fileID: 0}
+    - target: {fileID: 6425073110356410599, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: percentageThreeStars
+      value: 0.98
+      objectReference: {fileID: 0}
     - target: {fileID: 8218883624193763843, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_Name
       value: LevelController
@@ -32170,6 +32174,10 @@ PrefabInstance:
       propertyPath: customerPlaces.Array.data[2]
       value: 
       objectReference: {fileID: 640685332}
+    - target: {fileID: 2595904967473207729, guid: b2d77905b3204fc45be9d69735aab2ce, type: 3}
+      propertyPath: timeBetweenCustomerListChecks
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2595904967473207730, guid: b2d77905b3204fc45be9d69735aab2ce, type: 3}
       propertyPath: m_Name
       value: GameManager

@@ -903,8 +903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.008300781}
-  m_SizeDelta: {x: -1, y: -0.6999512}
+  m_AnchoredPosition: {x: -0.5, y: -117.2}
+  m_SizeDelta: {x: -1, y: 496.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1842076962
 CanvasRenderer:
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 21
+  itemId: 55
   indentLevel: 0
   _targetGameObject:
     gameObjectRef: {fileID: 0}
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6dd8d3a780f4d1ea772e3daf10c372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 20
+  itemId: 56
   indentLevel: 0
   targetObjects:
   - {fileID: 256654004}
@@ -1744,19 +1744,19 @@ PrefabInstance:
     - target: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: commandList.Array.data[0]
       value: 
-      objectReference: {fileID: 2090829867, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: commandList.Array.data[1]
       value: 
-      objectReference: {fileID: 2090829866, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: commandList.Array.data[2]
       value: 
-      objectReference: {fileID: 2090829871, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: commandList.Array.data[3]
       value: 
-      objectReference: {fileID: 2090829864, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11433304, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: commandList.Array.data[4]
       value: 
@@ -1788,6 +1788,14 @@ PrefabInstance:
     - target: {fileID: 1661184645, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: nodeRect.y
       value: 159
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661184666, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
+      propertyPath: itemId
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4141413454503630209, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
+      propertyPath: itemId
+      value: 53
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11462346, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}

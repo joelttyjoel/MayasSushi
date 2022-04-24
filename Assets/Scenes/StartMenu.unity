@@ -3692,6 +3692,18 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1842076960, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 496.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842076960, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842076960, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -117.2
+      objectReference: {fileID: 0}
     - target: {fileID: 217998352880855930, guid: e01d8132af3eecf47a1d1235e36de561, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3829,6 +3841,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5043996469256385317, guid: d80c5d2fac4ed83469aa3bf8c3dad2db, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043996469256385317, guid: d80c5d2fac4ed83469aa3bf8c3dad2db, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5043996469256385318, guid: d80c5d2fac4ed83469aa3bf8c3dad2db, type: 3}
       propertyPath: m_RootOrder
       value: 12
