@@ -43,6 +43,8 @@ namespace OrderStuff
 public class MyGameManager : MonoBehaviour
 {
     //simply having this causes crash
+    public AudioClip customerEnter;
+    public AudioClip customerLeave;
     public GameObject customerPrefab;
     public List<GameObject> customerPlaces;
     public GameObject recipeBook;
@@ -57,6 +59,7 @@ public class MyGameManager : MonoBehaviour
     private float timer;
     private Queue<Customer> customersInQue;
     private bool levelIsDone;
+    private AudioSource audioSource;
 
     private static MyGameManager _instance;
     public static MyGameManager Instance { get { return _instance; } }
@@ -93,6 +96,8 @@ public class MyGameManager : MonoBehaviour
         AddCustromersFromQue();
 
         levelIsDone = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -129,8 +134,20 @@ public class MyGameManager : MonoBehaviour
     {
         if (customersInQue.Count > 0)
         {
-            CreateCustomer(customersInQue.Peek());
+            bool customerCreated = CreateCustomer(customersInQue.Peek());
+
+            if(customerCreated)
+            {
+                audioSource.clip = customerEnter;
+                audioSource.Play();
+            }
         }
+    }
+
+    public void CustomerLeave()
+    {
+        audioSource.clip = customerLeave;
+        audioSource.Play();
     }
 
     private void CheckForEndLevel()
@@ -202,14 +219,14 @@ public class MyGameManager : MonoBehaviour
 
     public void ClearWholeBoard()
     {
-        //first do some check
+        if (!InteractionManager.Instance.canInteract) return;
 
         BoardManager.Instance.ClearWholeBoard();
     }
 
     public void ClearWholeConveyor()
     {
-        //check again
+        if (!InteractionManager.Instance.canInteract) return;
 
         ConveyorController.Instance.ClearWholeConveyor();
     }
@@ -219,11 +236,17 @@ public class MyGameManager : MonoBehaviour
         //always deselect all buttons
         EventSystem.current.SetSelectedGameObject(null);
 
+        //always able to close recipe book but not always open
+        if(!recipeBookState)
+        {
+            if (!InteractionManager.Instance.canInteract) return;
+        }
+
         recipeBookState = !recipeBookState;
 
-        InteractionManager.Instance.canInteract = !recipeBookState;
-
         recipeBook.SetActive(recipeBookState);
+
+        InteractionManager.Instance.canInteract = !recipeBookState;
 
         //set time
 
@@ -237,11 +260,13 @@ public class MyGameManager : MonoBehaviour
         //always deselect all buttons
         EventSystem.current.SetSelectedGameObject(null);
 
+        if (!InteractionManager.Instance.canInteract) return;
+
         pausMenuState = !pausMenuState;
 
-        InteractionManager.Instance.canInteract = !pausMenuState;
-
         pausMenu.SetActive(pausMenuState);
+
+        InteractionManager.Instance.canInteract = !pausMenuState;
 
         //set time
 

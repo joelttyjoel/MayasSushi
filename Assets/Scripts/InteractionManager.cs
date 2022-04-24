@@ -10,9 +10,14 @@ public class InteractionManager : MonoBehaviour
     public bool canInteract;
     public Color noRecipeSelectedColor;
     public Color yesRecipeSelectedColor;
+    public float defaultPitch;
+    public float pitchPerPiece;
+    public AudioClip selectPieceSound;
+    public AudioClip completedSound;
 
     private List<GameObject> clickedObjects;
     private LineRenderer lineBetweenTiles;
+    private AudioSource audioSource;
 
     private static InteractionManager _instance;
     public static InteractionManager Instance { get { return _instance; } }
@@ -38,6 +43,8 @@ public class InteractionManager : MonoBehaviour
         canInteract = true;
 
         lineBetweenTiles.positionCount = 0;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -156,6 +163,12 @@ public class InteractionManager : MonoBehaviour
                         lineBetweenTiles.positionCount = lineBetweenTiles.positionCount + 1;
                         lineBetweenTiles.SetPosition(lineBetweenTiles.positionCount - 1, new Vector3(mousePos2D.x, mousePos2D.y, -1f));
                     }
+
+                    //SOUND FOR SELECTION
+                    audioSource.pitch = defaultPitch + (clickedObjects.Count * pitchPerPiece);
+
+                    audioSource.clip = selectPieceSound;
+                    audioSource.Play();
                 }
             }
         }
@@ -163,9 +176,17 @@ public class InteractionManager : MonoBehaviour
         //release
         if(Input.GetMouseButtonUp(0))
         {
-            BoardManager.Instance.CheckSelection(clickedObjects);
+            bool wasRecipe = BoardManager.Instance.CheckSelection(clickedObjects);
 
             BoardManager.Instance.HideDisplayRecipeBox();
+
+            //ON RECIPE SOUND
+            if(wasRecipe)
+            {
+                audioSource.pitch = defaultPitch;
+                audioSource.clip = completedSound;
+                audioSource.Play();
+            }
 
             StopClick();
         }

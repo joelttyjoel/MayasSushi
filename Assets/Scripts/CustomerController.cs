@@ -389,6 +389,8 @@ public class CustomerController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
+        MyGameManager.Instance.CustomerLeave();
+
         StopAllCoroutines();
 
         Destroy(this.gameObject);

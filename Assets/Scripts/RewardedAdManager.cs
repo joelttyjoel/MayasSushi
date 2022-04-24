@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class RewardedAdManager : MonoBehaviour
 {
-    public bool ClearWholeBoard;
-    public bool ClearConveyor;
+    //0=clearwholeboard
+    //1=clearconveyor
+    public int adSelector;
 
     IRewardedAd ad;
     string adUnitId = "Rewarded_Android";
@@ -31,6 +32,9 @@ public class RewardedAdManager : MonoBehaviour
     private void Start()
     {
         InitServices();
+        adSelector = 0;
+
+        DontDestroyOnLoad(this);
     }
 
     public void SetupAd()
@@ -50,6 +54,13 @@ public class RewardedAdManager : MonoBehaviour
 
         // Impression Event
         MediationService.Instance.ImpressionEventPublisher.OnImpression += ImpressionEvent;
+    }
+
+    public void MyShowAd(int adSelectIndex)
+    {
+        adSelector = adSelectIndex;
+
+        ShowAd();
     }
 
     public void ShowAd()
@@ -111,14 +122,17 @@ public class RewardedAdManager : MonoBehaviour
 
     void UserRewarded(object sender, RewardEventArgs e)
     {
-        if (ClearWholeBoard)
+        switch (adSelector)
         {
-            BoardManager.Instance.ClearWholeBoard();
+            case 0:
+                BoardManager.Instance.ClearWholeBoard();
+                break;
+            case 1:
+                ConveyorController.Instance.ClearWholeConveyor();
+                break;
         }
-        else if (ClearConveyor)
-        {
-            ConveyorController.Instance.ClearWholeConveyor();
-        }
+        
+        GetComponent<ParticleSystem>().Play();
+        GetComponent<AudioSource>().Play();
     }
-
 }
