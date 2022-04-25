@@ -32159,6 +32159,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 298260148}
     - target: {fileID: 2595904967473207729, guid: b2d77905b3204fc45be9d69735aab2ce, type: 3}
+      propertyPath: customerEnter
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595904967473207729, guid: b2d77905b3204fc45be9d69735aab2ce, type: 3}
+      propertyPath: customerLeave
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595904967473207729, guid: b2d77905b3204fc45be9d69735aab2ce, type: 3}
       propertyPath: timeOnRecipeBookOpen
       value: 0.2
       objectReference: {fileID: 0}
