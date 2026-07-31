@@ -36,11 +36,11 @@ public class ButtonFunctionRedirector : MonoBehaviour
 
     public void AdManager_ClearWholeConveyor()
     {
-        GameObject.Find("AdManager").GetComponent<RewardedAdManager>().MyShowAd(1);
+        //GameObject.Find("AdManager").GetComponent<RewardedAdManager>().MyShowAd(1);
     }
 
     public void AdManager_ClearWholeBoard()
     {
-        GameObject.Find("AdManager").GetComponent<RewardedAdManager>().MyShowAd(0);
+        //GameObject.Find("AdManager").GetComponent<RewardedAdManager>().MyShowAd(0);
     }
 }

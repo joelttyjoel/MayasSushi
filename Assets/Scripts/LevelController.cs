@@ -137,7 +137,7 @@ public class LevelController : MonoBehaviour
         //ad check
         if (currentLevel % 3 == 0 && currentLevel > 2)
         {
-            GameObject.Find("AdManager").GetComponent<IntestitialAdPlayer>().ShowAd();
+            //GameObject.Find("AdManager").GetComponent<IntestitialAdPlayer>().ShowAd();
         }
     }
 
